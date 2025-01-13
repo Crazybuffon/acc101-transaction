@@ -1069,7 +1069,7 @@ function openTab(tabName, el) {
   
     currentTransactionIndex++;
     if (currentTransactionIndex >= scenarios.length) {
-      alert("🎊 All transactions are completed! Fantastic work!");
+      alert("🎊 All transactions are completed! Fantastic work! If you wish to practice more, refresh the page to load 10 more challenges!");
       document.getElementById('nextBtn').disabled = true;
       return;
     }
