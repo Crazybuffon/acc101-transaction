@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Acc101 - Mastering Accounting Transactions</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>🎓 Accounting 101 Game: Mastering Transactions</h1>
+  <p class="developed-by">👩‍🏫 Developed by <strong>Professor Grace Haoqing Fan</strong> , <strong>Singapore Management University</strong></p>
+  <p class="developed-by"></p>
+  <div class="intro">
+    <p>Welcome, Accounting 101 students! Ready to make learning accounting fun and interactive? Here's how to play:</p>
+    <ul>
+      <li><strong>Start with a Transaction:</strong> Each round presents 10 real-world business scenarios for you to tackle.</li>
+      <li><strong>Journal Entries:</strong> Enter the correct debits and credits to record the transaction.</li>
+      <li><strong>T-Accounts:</strong> Visualize your individual accounts by updating the T-Accounts.</li>
+      <li><strong>Trial Balance:</strong> Ensure your books are balanced by updating the Trial Balance.</li>
+      <li><strong>Check Your Answers:</strong> Validate your entries and see if you're on the right track.</li>
+      <li><strong>Advance to the Next Transaction:</strong> Once you've mastered the current one, move forward to the next challenge.</li>
+    </ul>
+    <p>After completing all 10 transactions, you can refresh the page to receive a new set of transactions if you’d like to continue practicing. Follow each step, learn from your mistakes, and watch your accounting skills grow. Let’s get started and turn those numbers into knowledge!</p>
+  </div>
+
+  <div class="rules">
+    <h3>📚 Key Accounting Rules:</h3>
+    <p>• <strong>Assets = Liabilities + Owner's Equity</strong></p>
+    <p>• <strong>Debits must equal Credits</strong></p>
+    <p>• <strong>Debit:</strong> Increases Assets & Expenses, Decreases Liabilities, Revenue, & Equity</p>
+    <p>• <strong>Credit:</strong> Decreases Assets & Expenses, Increases Liabilities, Revenue, & Equity</p>
+  </div>
+
+  <div class="hint">
+    <h2>🔍 Transaction <span id="transactionNumber"></span>:</h2>
+    <p id="transactionDesc">Loading transaction...</p>
+  </div>
+  <button onclick="showHint()">💡 Show Hint</button>
+
+  <div class="tab-container">
+    <button class="tab active" onclick="openTab('journal', this)">📝 Journal Entries</button>
+    <button class="tab" onclick="openTab('tAccount', this)">📈 T-Account</button>
+    <button class="tab" onclick="openTab('trialBalance', this)">📊 Trial Balance</button>
+  </div>
+
+  <!-- JOURNAL ENTRIES -->
+  <div id="journal" class="content active">
+    <h2>📝 Practice Journal Entries</h2>
+    <div id="journalEntries"></div>
+    
+    <button onclick="addJournalRow()">➕ Add Row</button>
+    <button onclick="checkJournalEntry()">✅ Check Answer</button>
+    <button onclick="resetJournalEntry()">🔄 Reset</button>
+    
+    <div id="journalResult" class="result"></div>
+  </div>
+
+  <!-- T ACCOUNTS -->
+  <div id="tAccount" class="content">
+    <h2>📈 T-Account Practice</h2>
+    <p>🎯 Keep track of your accounts! Add new lines for each transaction to see the big picture.</p>
+
+    <button onclick="addTAccount()">➕ Add T-Account</button>
+    <button onclick="checkTAccounts()">✅ Check My Answer</button>
+    <button onclick="redoTAccounts()">🔄 Re-do this transaction</button>
+    
+    <div id="tAccountResult" class="result"></div>
+    <div id="tAccountContainer"></div>
+  </div>
+
+  <!-- TRIAL BALANCE -->
+  <div id="trialBalance" class="content">
+    <h2>📊 Trial Balance (Cumulative)</h2>
+    <p>🛠️ Ensure your books are balanced! Adjust for new transactions as needed.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Account</th>
+          <th>Debit ($)</th>
+          <th>Credit ($)</th>
+        </tr>
+      </thead>
+      <tbody id="trialBalanceRows"></tbody>
+      <tfoot>
+        <tr class="totals-row">
+          <td>Totals</td>
+          <td id="tbTotalDebit">0.00</td>
+          <td id="tbTotalCredit">0.00</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <button onclick="addTrialBalanceRow()">➕ Add Row</button>
+    <button onclick="checkTrialBalance()">✅ Check My Answer</button>
+    <div id="trialBalanceResult" class="result"></div>
+  </div>
+
+  <button id="nextBtn" onclick="goToNextTransaction()" disabled>➡️ Next Transaction</button>
+
+  <!-- Footer -->
+  <div class="footer">
+    👩‍🏫 Developed by <strong>Professor Grace Haoqing Fan</strong> of <strong>Singapore Management University</strong>
+  </div>
+</div>
+
+<!-- External JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>

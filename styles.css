@@ -1,0 +1,428 @@
+/* 
+  styles.css
+  -----------
+  Contains all styling rules for the Accounting 101 page.
+  Keeps UI identical, just more organized.
+*/
+
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    position: relative;
+  }
+  
+  /* Headings */
+  h1, h2, h3 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2980b9;
+  }
+  
+  /* Intro Section */
+  .intro {
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    color: #34495e;
+  }
+  
+  .intro ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  
+  .developed-by {
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-top: 0.5em;
+    color: #555;
+    text-align: center;
+  }
+  
+  /* Rules/Hints */
+  .rules, .hint {
+    background-color: #ecf0f1;
+    padding: 25px 20px;
+    border-left: 5px solid #3498db;
+    margin-bottom: 30px;
+    border-radius: 8px;
+  }
+  
+  .rules h3, .hint h2 {
+    margin-bottom: 12px;
+    color: #2980b9;
+  }
+  
+  .hint p {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  /* Tab Container */
+  .tab-container {
+    display: flex;
+    border-bottom: 3px solid #bdc3c7;
+    margin-bottom: 25px;
+  }
+  
+  .tab {
+    flex: 1;
+    padding: 18px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #bdc3c7;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 16px;
+    font-weight: 500;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: #2c3e50;
+    position: relative;
+  }
+  
+  .tab:not(:last-child) {
+    border-right: 1px solid #bdc3c7;
+  }
+  
+  .tab.active {
+    background-color: #2980b9;
+    color: #ffffff;
+  }
+  
+  .content {
+    display: none;
+    animation: fadeIn 0.5s;
+  }
+  
+  .content.active {
+    display: block;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Form elements & Buttons */
+  input[type="number"], .dropbtn {
+    padding: 12px;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    margin-right: 10px;
+    width: 160px;
+    font-size: 15px;
+    transition: border-color 0.3s;
+  }
+  
+  input[type="number"]:focus, .dropbtn:focus {
+    border-color: #2980b9;
+    outline: none;
+  }
+  
+  button {
+    padding: 12px 25px;
+    background-color: #2ecc71;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 5px 5px 5px 0;
+    font-size: 15px;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  button:hover:not(:disabled) {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+  }
+  
+  button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* Result messages */
+  .result {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  .correct-block {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+  }
+  
+  .incorrect-block {
+    background-color: #f2dede;
+    color: #a94442;
+    border: 1px solid #ebccd1;
+  }
+  
+  /* T-Account Styles */
+  .t-account {
+    width: 300px;
+    border: 2px solid #bdc3c7;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    display: inline-block;
+    vertical-align: top;
+    background-color: #ecf0f1;
+    margin-right: 25px;
+  }
+  
+  .t-title {
+    background-color: #2980b9;
+    color: #ffffff;
+    text-align: center;
+    padding: 12px;
+    font-weight: bold;
+    border-bottom: 2px solid #2471a3;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-size: 1.1em;
+  }
+  
+  .t-body {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+  }
+  
+  .t-column {
+    width: 48%;
+    background-color: #ffffff;
+    padding: 12px;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    min-height: 150px;
+    position: relative;
+  }
+  
+  .column-label {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #2c3e50;
+  }
+  
+  .t-line {
+    display: flex;
+    margin-bottom: 12px;
+  }
+  
+  .t-line input {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .t-account-buttons {
+    text-align: center;
+    margin-top: 12px;
+  }
+  
+  /* Trial Balance Table Styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+  }
+  
+  th, td {
+    border: 1px solid #bdc3c7;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #2980b9;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .totals-row td {
+    font-weight: bold;
+    background-color: #ecf0f1;
+  }
+  
+  /* Dropright (Nested Menus) */
+  .dropright {
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+  }
+  
+  .dropbtn {
+    background-color: #ffffff;
+    color: #2c3e50;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 220px;
+    text-align: left;
+    transition: border-color 0.3s, background-color 0.3s;
+  }
+  
+  .dropbtn:hover {
+    border-color: #2980b9;
+    background-color: #f0f4f8;
+  }
+  
+  .dropright-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    margin-top: 2px;
+  }
+  
+  .dropright-content .submenu {
+    position: relative;
+  }
+  
+  .dropright-content .submenu > button {
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #2c3e50;
+    transition: background-color 0.3s;
+  }
+  
+  .dropright-content .submenu > button:hover {
+    background-color: #ecf0f1;
+  }
+  
+  .submenu-content {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #ffffff;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    margin-left: 1px;
+  }
+  
+  .menu-item {
+    padding: 10px;
+    cursor: pointer;
+    color: #2c3e50;
+    transition: background-color 0.3s;
+  }
+  
+  .menu-item:hover {
+    background-color: #ecf0f1;
+  }
+  
+  /* Show submenu on hover */
+  .submenu:hover .submenu-content {
+    display: block;
+  }
+  
+  /* Next Button Styling */
+  #nextBtn {
+    padding: 14px 30px;
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #nextBtn:hover:not(:disabled) {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+  }
+  
+  #nextBtn:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* Footer */
+  .footer {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 14px;
+    color: #7f8c8d;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .tab-container {
+      flex-direction: column;
+    }
+  
+    .tab {
+      border-radius: 8px;
+      margin-bottom: 5px;
+    }
+  
+    .t-account {
+      width: 100%;
+      margin-right: 0;
+    }
+  
+    .dropright-content, .submenu-content {
+      min-width: 180px;
+    }
+  
+    .dropbtn {
+      width: 100%;
+    }
+  }
+  
