@@ -1158,15 +1158,15 @@ function openTab(tabName, el) {
           "Employee Benefits Payable", "Legal Fees Payable", "Bonus Payable", "Property Tax Payable"
         ],
         "Equity": [
-          "Capital", "Retained Earnings", "Dividends", "Revenue",
-          "Rent Expense", "Salary Expense", "Utilities Expense", "Marketing Expense",
+          "Capital", "Retained Earnings", "Dividends", "Revenue","Cost of Goods Sold",
+          "Rent Expense", "Salary Expense","Wages Expense", "Utilities Expense", "Marketing Expense",
           "Insurance Expense", "Interest Income", "Interest Expense", "Accumulated Depreciation",
           "Depreciation Expense", "Bad Debt Expense", "Bonus Expense", "Charitable Donations Expense",
           "Cleaning Expense", "Delivery Expense", "Employee Benefits Expense", "Freight Expense",
           "Legal Expense", "Maintenance Expense", "Property Tax Expense", "Repair Expense",
           "Servicing Expense", "Shrinkage Expense",
           "Sales Revenue", "Foreign Exchange Loss", "Rent Income", "Renovation Expense",
-          "Advertising Expense" 
+          "Advertising Expense"
         ]
       };
       
@@ -1705,37 +1705,46 @@ function openTab(tabName, el) {
    */
   function redoTAccounts() {
     const allTAccounts = document.querySelectorAll('.t-account');
-  
+    let isAccountRemoved = false;
+
     allTAccounts.forEach(tAcc => {
-      const inputs = tAcc.querySelectorAll('.debitLineValue, .creditLineValue');
-  
-      let hasReadOnly = false;
-      inputs.forEach(el => {
-        if (el.readOnly) {
-          hasReadOnly = true;
+        const inputs = tAcc.querySelectorAll('.debitLineValue, .creditLineValue');
+        let hasReadOnly = false;
+
+        inputs.forEach(el => {
+            if (el.readOnly) {
+                hasReadOnly = true;
+            }
+        });
+
+        // Remove the T-Account completely if it has no read-only lines.
+        if (!hasReadOnly) {
+            tAccountUsedAccounts.delete(tAcc.querySelector('.title-selectValue').value);
+            tAcc.remove();
+            isAccountRemoved = true;
+        } else {
+            // Otherwise, remove only the editable lines.
+            const debitEls = tAcc.querySelectorAll('.debitLineValue');
+            const creditEls = tAcc.querySelectorAll('.creditLineValue');
+            debitEls.forEach(el => {
+                if (!el.readOnly) {
+                    el.parentElement.remove();
+                }
+            });
+            creditEls.forEach(el => {
+                if (!el.readOnly) {
+                    el.parentElement.remove();
+                }
+            });
         }
-      });
-  
-      // Remove the entire T-Account if it has no read-only lines (meaning it belongs to current tx).
-      if (!hasReadOnly) {
-        tAcc.remove();
-      } else {
-        // Otherwise, remove only the editable lines (current transaction lines).
-        const debitEls  = tAcc.querySelectorAll('.debitLineValue');
-        const creditEls = tAcc.querySelectorAll('.creditLineValue');
-        debitEls.forEach(el => {
-          if (!el.readOnly) {
-            el.parentElement.remove();
-          }
-        });
-        creditEls.forEach(el => {
-          if (!el.readOnly) {
-            el.parentElement.remove();
-          }
-        });
-      }
     });
-  }
+
+    // If an account was removed, add a new T-Account dropdown
+    if (isAccountRemoved) {
+        addTAccount();
+    }
+}
+
   
   /**
    * Dynamically updates the Trial Balance debit/credit totals as the user types.
