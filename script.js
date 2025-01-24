@@ -39,7 +39,7 @@ function openTab(tabName, el) {
     "Tools", "Furniture", "Wages Expense", "Wages Payable",
     "Revenue", "Sales Revenue", "Cost of Goods Sold", "Foreign Exchange Loss",
     "Rent Income", "Renovation Expense",
-    "Advertising Expense" // <-- Added here
+    "Advertising Expense", "Common Stock","Interest Payable"  
   ];
   
   
@@ -1154,7 +1154,7 @@ function openTab(tabName, el) {
         ],
         "Liabilities": [
           "Accounts Payable", "Notes Payable", "Unearned Revenue", "Taxes Payable", 
-          "Salary Payable", "Credit Card Payable", "Wages Payable", "Loans Payable",
+          "Salary Payable", "Credit Card Payable", "Interest Payable", "Wages Payable", "Loans Payable",
           "Employee Benefits Payable", "Legal Fees Payable", "Bonus Payable", "Property Tax Payable"
         ],
         "Equity": [
@@ -1166,7 +1166,7 @@ function openTab(tabName, el) {
           "Legal Expense", "Maintenance Expense", "Property Tax Expense", "Repair Expense",
           "Servicing Expense", "Shrinkage Expense",
           "Sales Revenue", "Foreign Exchange Loss", "Rent Income", "Renovation Expense",
-          "Advertising Expense"
+          "Advertising Expense", "Common Stock"
         ]
       };
       
