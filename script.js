@@ -1155,7 +1155,7 @@ function openTab(tabName, el) {
         "Liabilities": [
           "Accounts Payable", "Notes Payable", "Unearned Revenue", "Taxes Payable", 
           "Salary Payable", "Credit Card Payable", "Interest Payable", "Wages Payable", "Loans Payable",
-          "Employee Benefits Payable", "Legal Fees Payable", "Bonus Payable", "Property Tax Payable"
+          "Employee Benefits Payable", "Legal Fees Payable", "Bonus Payable", "Property Tax Payable","Dividends Payable"
         ],
         "Equity": [
           "Capital", "Retained Earnings", "Dividends", "Revenue","Cost of Goods Sold",
@@ -1163,7 +1163,7 @@ function openTab(tabName, el) {
           "Insurance Expense", "Interest Income", "Interest Expense", "Accumulated Depreciation",
           "Depreciation Expense", "Bad Debt Expense", "Bonus Expense", "Charitable Donations Expense",
           "Cleaning Expense", "Delivery Expense", "Employee Benefits Expense", "Freight Expense",
-          "Legal Expense", "Maintenance Expense", "Property Tax Expense", "Repair Expense",
+          "Legal Expense", "Maintenance Expense","Vehicle Maintenance Expense", "Property Tax Expense", "Repair Expense",
           "Servicing Expense", "Shrinkage Expense",
           "Sales Revenue", "Foreign Exchange Loss", "Rent Income", "Renovation Expense",
           "Advertising Expense", "Common Stock"
