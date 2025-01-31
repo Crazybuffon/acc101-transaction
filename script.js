@@ -1,10 +1,3 @@
-/*
-  script.js
-  -----------
-  Contains all interactive logic for Accounting 101 practice.
-  Each function is documented with a brief description and
-  usage notes, without changing any existing functionality.
-*/
 
 /**
  * Switches between the three tabs: "Journal Entries", "T-Account", and "Trial Balance".
@@ -21,39 +14,10 @@ function openTab(tabName, el) {
     document.getElementById(tabName).classList.add('active');
     el.classList.add('active');
   }
-  
-  // Account options available (not used directly but references for hints, etc.)
-  const accountOptions = [
-    "Cash", "Accounts Receivable", "Inventory", "Supplies", "Prepaid Insurance",
-    "Equipment", "Accumulated Depreciation", "Dividends", "Interest Income",
-    "Interest Expense", "Retained Earnings", "Marketing Expense", "Unearned Revenue",
-    "Taxes Payable", "Insurance Expense", "Depreciation Expense",
-    "Rent Expense", "Salary Expense", "Salary Payable", "Bad Debt Expense",
-    "Bonus Expense", "Bonus Payable", "Charitable Donations Expense", 
-    "Cleaning Expense", "Credit Card Payable", "Delivery Expense",
-    "Employee Benefits Expense", "Employee Benefits Payable", "Freight Expense", 
-    "Legal Expense", "Legal Fees Payable", "Loans Payable", "Maintenance Expense", 
-    "Notes Receivable", "Prepaid Lease Expense", "Prepaid Rent", 
-    "Prepaid Software Subscription", "Property Tax Expense", "Property Tax Payable",
-    "Raw Materials", "Repair Expense", "Servicing Expense", "Shrinkage Expense", 
-    "Tools", "Furniture", "Wages Expense", "Wages Payable",
-    "Revenue", "Sales Revenue", "Cost of Goods Sold", "Foreign Exchange Loss",
-    "Rent Income", "Renovation Expense",
-    "Advertising Expense", "Common Stock","Interest Payable"  
-  ];
-  
-  
 
   
-  /**
-   * Array of transaction scenarios. Each scenario has:
-   * - description: The text describing the transaction.
-   * - hint: A quick pointer to help the user.
-   * - solution: An array of {account, debit, credit}.
-   * - explanation: A textual explanation of the correct entry.
-   */
 ////////////////////////////////////////////////////////////////
-// 1. FULL 100-SCENARIO ARRAY (WITHOUT "Transaction (x/x)" TEXT)
+// 1. FULL 100-SCENARIO ARRAY 
 ////////////////////////////////////////////////////////////////
   const allScenarios = [
     {
@@ -1161,7 +1125,7 @@ function openTab(tabName, el) {
           "Capital", "Retained Earnings", "Dividends", "Revenue","Cost of Goods Sold",
           "Rent Expense", "Salary Expense","Wages Expense", "Utilities Expense", "Marketing Expense",
           "Insurance Expense", "Interest Income", "Interest Expense", "Accumulated Depreciation",
-          "Depreciation Expense", "Bad Debt Expense", "Bonus Expense", "Charitable Donations Expense",
+          "Depreciation Expense", "Bad Debt Expense","Taxes Expense", "Bonus Expense", "Charitable Donations Expense",
           "Cleaning Expense", "Delivery Expense", "Employee Benefits Expense", "Freight Expense",
           "Legal Expense", "Maintenance Expense","Vehicle Maintenance Expense", "Property Tax Expense", "Repair Expense",
           "Servicing Expense", "Shrinkage Expense",
